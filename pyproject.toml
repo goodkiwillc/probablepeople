@@ -1,6 +1,6 @@
 [project]
 name = "probablepeople"
-version = "0.5.6"
+version = "0.5.7"
 description = "Parse romanized names & companies using advanced NLP methods"
 readme = "README.md"
 license = {text = "MIT License", url = "http://www.opensource.org/licenses/mit-license.php"}
@@ -8,7 +8,8 @@ requires-python = ">=3.9"
 dependencies = [
   "python-crfsuite>=0.7",
   "probableparsing",
-  "doublemetaphone"
+  "doublemetaphone",
+  "orjson"
 ]
 classifiers = [
   "Development Status :: 3 - Alpha",
@@ -38,9 +39,10 @@ dev = ["pytest",
 ]
 
 [build-system]
-requires = ["setuptools>=42", "wheel", "parserator", "probableparsing", "doublemetaphone"
+requires = ["setuptools>=42", "wheel", "parserator", "probableparsing", "doublemetaphone", "orjson"
 ]
 build-backend = "setuptools.build_meta"
+
 
 
 [tool.setuptools.packages.find]
@@ -50,7 +52,8 @@ include = ["probablepeople"]
 [tool.setuptools.package-data]
 probablepeople = ["generic_learned_settings.crfsuite",
                   "person_learned_settings.crfsuite",
-                  "company_learned_settings.crfsuite"
+                  "company_learned_settings.crfsuite",
+                  "*.json.gz"
 ]
 
 
